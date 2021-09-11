@@ -13,6 +13,12 @@ import { SearchmessagesComponent } from './components/section/searchmessages/sea
 //Importacion para forms
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+/**
+ * Importacion para toast
+ * 
+ */
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
 
 
@@ -29,7 +35,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
