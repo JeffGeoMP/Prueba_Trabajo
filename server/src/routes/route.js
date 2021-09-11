@@ -49,10 +49,10 @@ app.post('/messaqe', (req, res) => {
 app.get('/message/:id', (req, res) =>{
     try {
         let Result = SearchMessage(req.params.id);
-        if(Result != null){
+        if(Result != ""){
             res.status(200).json({Message: Result});
         }else{
-            res.status(400).json({Message: "Mensaje No Encontrado"});
+            res.status(403).json({Message: "Mensaje No Encontrado"});
         }
         
     } catch (error) {
