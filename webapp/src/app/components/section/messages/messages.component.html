@@ -1,1 +1,44 @@
-<p>messages works!</p>
+<div class="container mt-5 mb-5">
+    <form [formGroup]="AddMessageForm" (submit) ="AddMessage()">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Añadir Mensaje</h2>
+        </div>
+      </div>
+  
+      <div class="row mt-3 mb-2">
+        <div class="offset-2 col-md-8">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="validationServer01">Mensaje</label>
+              <input
+                formControlName="Message"
+                type="text"
+                class="form-control"
+                id="validationServer01"
+                placeholder="Ingrese el Mensaje a almacenar"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="validationServer02">Tag</label>
+              <input
+                formControlName="Tag"
+                type="text"
+                class="form-control"
+                id="validationServer02"
+                placeholder="Ingrese un Tag Valido"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="offset-4 col-md-4">
+          <button type="submit" class="btn btn-primary btn-block" [disabled] = "AddMessageForm.invalid">
+            Agregar Mensaje
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>

@@ -31,6 +31,7 @@ export class CredentialsComponent implements OnInit {
     }, (error:any) =>{
       this.Toast.ShowError(error.error.Message, "Error: " + error.status)
     });
+    this.FormCredentials.reset();
   }
 
 }
