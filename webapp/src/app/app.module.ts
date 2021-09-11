@@ -8,7 +8,13 @@ import { FooterComponent } from './components/common/footer/footer.component';
 import { CredentialsComponent } from './components/section/credentials/credentials.component';
 import { MessagesComponent } from './components/section/messages/messages.component';
 import { SearchmessagesComponent } from './components/section/searchmessages/searchmessages.component';
-import { SystemComponent } from './components/views/system/system.component';
+
+
+//Importacion para forms
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +23,13 @@ import { SystemComponent } from './components/views/system/system.component';
     FooterComponent,
     CredentialsComponent,
     MessagesComponent,
-    SearchmessagesComponent,
-    SystemComponent
+    SearchmessagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
