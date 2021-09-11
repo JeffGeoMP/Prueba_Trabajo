@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from "../../../services/api/api.service";
+import { AlertsService } from "../../../services/toast/alerts.service";
+
 
 @Component({
   selector: 'app-credentials',
@@ -8,9 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CredentialsComponent implements OnInit {
 
-  public FormCredentials!: FormGroup;
+  public FormCredentials !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private Api: ApiService, private Toast: AlertsService) { }
 
   ngOnInit(): void {
     this.FormCredentials = this.formBuilder.group({
@@ -20,7 +23,14 @@ export class CredentialsComponent implements OnInit {
   }
 
   Send(){
-    
+    this.Api.AddCredentials(
+      this.FormCredentials.value.Key,
+      this.FormCredentials.value.SharedSecret
+    ).subscribe(resp =>{
+      this.Toast.ShowSucces("Operacion Exitosa","Credenciales Añadidas");
+    }, (error:any) =>{
+      this.Toast.ShowError(error.error.Message, "Error: " + error.status)
+    });
   }
 
 }

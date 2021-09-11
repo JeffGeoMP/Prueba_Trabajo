@@ -20,6 +20,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 
+/**
+ * Importacion de servicios
+ */
+ import { ApiService } from './services/api/api.service'
+ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,11 +41,14 @@ import { ToastrModule } from "ngx-toastr";
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
 
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
