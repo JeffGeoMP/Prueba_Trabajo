@@ -5,33 +5,26 @@ import { ApiService } from '../../../services/api/api.service';
 import { AlertsService } from '../../../services/toast/alerts.service';
 
 @Component({
-  selector: 'app-searchmessages',
-  templateUrl: './searchmessages.component.html',
-  styleUrls: ['./searchmessages.component.css']
+  selector: 'app-searchmessagetag',
+  templateUrl: './searchmessagetag.component.html',
+  styleUrls: ['./searchmessagetag.component.css']
 })
-export class SearchmessagesComponent implements OnInit {
+export class SearchmessagetagComponent implements OnInit {
 
-  public SearchMessageId!: FormGroup;
   public SearchMessageTag!: FormGroup;
-
   public Messages !: MessagesInterface[];
 
   constructor(
-    private formBuilder: FormBuilder,
+    private FormBuilderMeesageTag: FormBuilder,
     private Api: ApiService,
     private Toast: AlertsService
   ) { }
 
   ngOnInit(): void {
-
-    this.SearchMessageId = this.formBuilder.group({
-      Id: [''],
-      Message: [''],
+    this.SearchMessageTag = this.FormBuilderMeesageTag.group({
+      Tag: ['',[Validators.required, Validators.minLength(1)]]
     });
-
-    this.SearchMessageTag = this.formBuilder.group({
-      Tag: ['', [Validators.required, Validators.minLength(1)]],
-    });
+    
   }
 
   SearchTag() {
@@ -45,19 +38,5 @@ export class SearchmessagesComponent implements OnInit {
       this.Toast.ShowError(error.error.Message, "Error: " + error.status);
     })
     
-  }
-
-  SearchId() {
-    this.Api.GetMessageId(
-      this.SearchMessageId.value.Id
-    ).subscribe(resp =>{
-      this.Toast.ShowSucces("Operacion Exitosa", "Mensaje Encontrado");
-      this.SearchMessageId.setValue({
-        Id: this.SearchMessageId.value.Id,
-        Message : resp.Message
-      });
-    },(error) =>{
-      this.Toast.ShowError(error.error.Message, "Error: " + error.status);
-    });
   }
 }

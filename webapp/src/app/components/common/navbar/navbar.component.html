@@ -6,13 +6,19 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Credentials <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Credenciales <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/message">Messages</a>
+          <a class="nav-link" href="/message">Mensajes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/search">Search Messages</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Buscar Mensajes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/searchid">Buscar por Identificador</a>
+            <a class="dropdown-item" href="/searchtag">Buscar por Tag</a>
+          </div>
         </li>
       </ul>
     </div>

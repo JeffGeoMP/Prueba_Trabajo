@@ -7,7 +7,6 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { CredentialsComponent } from './components/section/credentials/credentials.component';
 import { MessagesComponent } from './components/section/messages/messages.component';
-import { SearchmessagesComponent } from './components/section/searchmessages/searchmessages.component';
 
 
 //Importacion para forms
@@ -25,6 +24,8 @@ import { ToastrModule } from "ngx-toastr";
  */
  import { ApiService } from './services/api/api.service'
  import { HttpClientModule } from '@angular/common/http';
+import { SearchmessageidComponent } from './components/section/searchmessageid/searchmessageid.component';
+import { SearchmessagetagComponent } from './components/section/searchmessagetag/searchmessagetag.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ToastrModule } from "ngx-toastr";
     FooterComponent,
     CredentialsComponent,
     MessagesComponent,
-    SearchmessagesComponent
+    SearchmessageidComponent,
+    SearchmessagetagComponent
   ],
   imports: [
     BrowserModule,

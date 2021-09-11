@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CredentialsComponent } from './components/section/credentials/credentials.component';
 import { MessagesComponent } from './components/section/messages/messages.component';
-import { SearchmessagesComponent } from './components/section/searchmessages/searchmessages.component';
+import { SearchmessageidComponent } from './components/section/searchmessageid/searchmessageid.component';
+import { SearchmessagetagComponent } from './components/section/searchmessagetag/searchmessagetag.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,12 @@ const routes: Routes = [
     component : MessagesComponent
   },
   {
-    path: 'search',
-    component : SearchmessagesComponent
+    path: 'searchid',
+    component : SearchmessageidComponent
+  },
+  {
+    path: 'searchtag',
+    component : SearchmessagetagComponent
   }
 ];
 
