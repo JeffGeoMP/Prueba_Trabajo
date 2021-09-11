@@ -27,7 +27,7 @@ app.use(express.urlencoded({
 /**
  * Rutas del Servidor
  */
-//app.use(require('./routes/routes'));
+app.use(require('./routes/route'));
 
 
 /**
