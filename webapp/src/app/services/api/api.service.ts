@@ -58,6 +58,6 @@ export class ApiService {
       "Content-Type": "application/json"
     });
 
-    return this.http.get<MessagesInterface>(Dir, {headers:Headers});
+    return this.http.get<MessagesInterface[]>(Dir, {headers:Headers});
   }
 }

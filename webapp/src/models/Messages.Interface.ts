@@ -1,7 +1,5 @@
 export interface MessagesInterface{
-    Messages : [{
-        Id: String, 
-        Message: String, 
-        Tag : String
-    }]
+    Id: String, 
+    Message: String, 
+    Tag : String
 }

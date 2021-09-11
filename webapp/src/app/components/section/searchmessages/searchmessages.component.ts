@@ -14,7 +14,7 @@ export class SearchmessagesComponent implements OnInit {
   public SearchMessageId!: FormGroup;
   public SearchMessageTag!: FormGroup;
 
-  public Messages !: MessagesInterface;
+  public Messages !: MessagesInterface[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,9 +38,10 @@ export class SearchmessagesComponent implements OnInit {
     this.Api.GetMessagesTag(
       this.SearchMessageTag.value.Tag
     ).subscribe(resp =>{
-      this.Messages = resp;
+      this.Messages = resp
       this.Toast.ShowSucces("Data Recibida", "Mensajes Encontrados");
     }, (error) =>{
+      this.Messages = [];
       this.Toast.ShowError(error.error.Message, "Error: " + error.status);
     })
     

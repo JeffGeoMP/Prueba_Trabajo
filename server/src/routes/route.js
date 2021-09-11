@@ -67,10 +67,14 @@ app.get('/message/:id', (req, res) =>{
 app.get('/messages/:tag', (req, res) =>{
     try {
         let Result = SearchTags(req.params.tag);
-        res.status(200).json({Messages: Result});
+        if(Result.length!=0){
+            res.status(200).json(Result);
+        }else{
+            res.status(403).json({Message:"No Existen Mensajes Con el TAG"});
+        }
     } catch (error) {
         console.log(error);
-        res.status(500).json({message: "Ha Ocurrido un Error"});
+        res.status(500).json({Message: "Ha Ocurrido un Error"});
     }
 });
 
