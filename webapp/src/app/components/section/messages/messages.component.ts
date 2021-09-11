@@ -31,7 +31,7 @@ export class MessagesComponent implements OnInit {
       this.AddMessageForm.value.Message,
       this.AddMessageForm.value.Tag
     ).subscribe(resp =>{
-
+      alert(resp.Id);
       this.Toast.ShowSucces(""+resp.Id, 'Mensaje Añadido');
     }, (error) =>{
       this.Toast.ShowError(error.error.Message, "Error: " + error.status)
